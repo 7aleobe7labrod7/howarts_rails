@@ -22,9 +22,12 @@ test:
   port: 5432
 
 production:
-  <<: *default
-  database: howarts_rails_production
+  adapter: postgresql
+  encoding: unicode
+  database: howarts_rails_winter_river_381
+  pool: 5
   username: postgres
-  password: <%= ENV["HOWARTS_RAILS_DATABASE_PASSWORD"] %>
-  host: localhost
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: howarts-rails-winter-river-381-db.flycast
   port: 5432
+  sslmode: require
